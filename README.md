@@ -1,3 +1,28 @@
+## ament_index (foxy) - 1.0.0-1
+
+The packages in the `ament_index` repository were released into the `foxy` distro by running `/usr/bin/bloom-release -r foxy ament_index --override-release-repository-push-url git@github.com:ros2-gbp/ament_index-release` on `Fri, 22 May 2020 21:02:16 -0000`
+
+These packages were released:
+- `ament_index_cpp`
+- `ament_index_python`
+
+Version of package(s) in repository `ament_index`:
+
+- upstream repository: https://github.com/ament/ament_index.git
+- release repository: https://github.com/ros2-gbp/ament_index-release.git
+- rosdistro version: `0.8.0-1`
+- old version: `0.8.0-1`
+- new version: `1.0.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.9.7`
+- catkin_pkg version: `0.4.14`
+- rosdep version: `0.18.0`
+- rosdistro version: `0.8.0`
+- vcstools version: `0.1.42`
+
+
 ## ament_index (foxy) - 0.8.0-1
 
 The packages in the `ament_index` repository were released into the `foxy` distro by running `/usr/bin/bloom-release -r foxy ament_index` on `Sat, 18 Apr 2020 00:32:45 -0000`
