@@ -1,8 +1,8 @@
-This document is a declaration of software quality for the `ament_index_cpp` package, based on the guidelines in [REP-2004](https://github.com/ros-infrastructure/rep/blob/rep-2004/rep-2004.rst).
+This document is a declaration of software quality for the `ament_index_cpp` package, based on the guidelines in [REP-2004](https://www.ros.org/reps/rep-2004.html).
 
 # `ament_index_cpp` Quality Declaration
 
-The package `ament_index_cpp` claims to be in the **Quality Level 4** category.
+The package `ament_index_cpp` claims to be in the **Quality Level 1** category.
 
 Below are the rationales, notes, and caveats for this claim, organized by each requirement listed in the [Package Quality Categories in REP-2004](https://index.ros.org/doc/ros2/Contributing/Developer-Guide/#package-quality-categories)
 
@@ -14,7 +14,7 @@ Below are the rationales, notes, and caveats for this claim, organized by each r
 
 ### Version Stability [1.ii]
 
-`ament_index_cpp` is not yet at a stable version, i.e. >= 1.0.0"
+`ament_index_cpp` is at a stable version, i.e. >= 1.0.0. The current version can be found in its [package.xml](./package.xml).
 
 ### Public API Declaration [1.iii]
 
@@ -66,11 +66,11 @@ All pull requests must resolve related documentation changes before merging.
 
 ### Feature Documentation [3.i]
 
-`ament_index_cpp` does not have a documented feature list. Although it currently states part of its conceptual overview [here](https://github.com/ament/ament_cmake/blob/master/ament_cmake_core/doc/resource_index.md).
+`ament_index_cpp` has a documented feature list, and it is [hosted](http://docs.ros2.org/latest/api/ament_index_cpp/).
 
 ### Public API Documentation [3.ii]
 
-Some `ament_index_cpp` API functions are documented using docstrings. However, this is not hosted anywhere.
+All `ament_index_cpp` API functions are documented using docstrings, and it is [hosted](http://docs.ros2.org/latest/api/ament_index_cpp/).
 
 ### License [3.iii]
 
@@ -100,7 +100,7 @@ New features are required to have tests before being added.
 
 ### Public API Testing [4.ii]
 
-All the functionality of the declared API in this package is covered in its unit tests. Currently it has a line coverage of [99%](https://ci.ros2.org/job/ci_linux_coverage/85/cobertura/src_ament_ament_index_ament_index_cpp_src/).
+All the functionality of the declared API in this package is covered in its unit tests. Currently it has a line coverage of [99%](https://ci.ros2.org/job/nightly_linux_coverage/lastSuccessfulBuild/cobertura/src_ament_ament_index_ament_index_cpp_src/).
 
 ### Coverage [4.iii]
 
@@ -109,16 +109,24 @@ All the functionality of the declared API in this package is covered in its unit
 This includes:
 
 - tracking and reporting line coverage statistics
-- achieving and maintaining a reasonable branch line coverage (90-100%)
+- achieving and maintaining a reasonable branch or line coverage (90-100%)
 - no lines are manually skipped in coverage calculations
 
 Changes are required to make a best effort to keep or increase coverage before being accepted, but decreases are allowed if properly justified and accepted by reviewers.
 
-Current coverage statistics can be viewed [here](https://ci.ros2.org/job/ci_linux_coverage/85/cobertura/src_ament_ament_index_ament_index_cpp_src/).
+Current coverage statistics can be viewed [here](https://ci.ros2.org/job/ci_linux_coverage/lastSuccessfulBuild/cobertura/src_ament_ament_index_ament_index_cpp_src/).
+
+A description of how coverage statistics are summarized from this page, can be found in the ["ROS 2 On-boarding Guide"](https://index.ros.org/doc/ros2/Contributing/ROS-2-On-boarding-Guide/#note-on-coverage-runs).
 
 ### Performance [4.iv]
 
-`ament_index_cpp` does not conduct performance tests.
+An environment variable defines the prefix paths of such resource indices and the API has a time complexity of `O(n)` where `n` is the number of prefix paths.
+The time complexity to query information is either scaling linearly with the number of resource types or with the number of resources per type (depending on which dimension is requested).
+If the content of a specific resource is retrieved the time complexity is linear to the size of the content as is the memory usage in that case since the content is returned to the caller.
+The runtime cost of the implementation is dominated by the runtime cost of the underlying filesystem API, and the implemented logic doesn't add any significant overhead.
+
+From a usage point of view it is also expected that the resource index is commonly only queried during startup and not at runtime of a production system.
+Therefore `ament_index_cpp` does not conduct explicit performance tests.
 
 ### Linters and Static Analysis [4.v]
 
@@ -142,7 +150,7 @@ Currently nightly results can be seen here:
 
 ### Vulnerability Disclosure Policy [7.i]
 
-`ament_index_cpp` does not have a Vulnerability Disclosure Policy
+This package conforms to the Vulnerability Disclosure Policy in [REP-2006](https://www.ros.org/reps/rep-2006.html).
 
 # Current status Summary
 
@@ -151,7 +159,7 @@ The chart below compares the requirements in the REP-2004 with the current state
 |--|--|--|
 |1| **Version policy** |---|
 |1.i|Version Policy available | ✓ |
-|1.ii|Stable version |☓|
+|1.ii|Stable version |✓|
 |1.iii|Declared public API|✓|
 |1.iv|API stability policy|✓|
 |1.v|ABI stability policy|✓|
@@ -163,8 +171,8 @@ The chart below compares the requirements in the REP-2004 with the current state
 |2.iv| CI policy for change requests | ✓ |
 |2.v| Documentation policy for change requests | ✓ |
 |3| **Documentation** | --- |
-|3.i| Per feature documentation | ☓ |
-|3.ii| Per public API item documentation | ☓ |
+|3.i| Per feature documentation | ✓ |
+|3.ii| Per public API item documentation | ✓ |
 |3.iii| Declared License(s) | ✓ |
 |3.iv| Copyright in source files| ✓ |
 |3.v.a| Quality declaration linked to README | ✓ |
@@ -174,7 +182,7 @@ The chart below compares the requirements in the REP-2004 with the current state
 |4.ii| Public API tests | ✓ |
 |4.iii.a| Using coverage |✓ |
 |4.iii.a| Coverage policy | ✓ |
-|4.iv.a| Performance tests (if applicable) | ☓ |
+|4.iv.a| Performance tests (if applicable) | ✓ |
 |4.iv.b| Performance tests policy| ✓ |
 |4.v.a| Code style enforcement (linters)| ✓ |
 |4.v.b| Use of static analysis tools | ✓ |
@@ -185,6 +193,6 @@ The chart below compares the requirements in the REP-2004 with the current state
 |6| Platform support | --- |
 |6.i| Support targets Tier1 ROS platforms| ✓ |
 |7| Security | --- |
-|7.i| Vulnerability Disclosure Policy | ☓ |
+|7.i| Vulnerability Disclosure Policy | ✓ |
 
-Comparing this table with the [Quality Level Comparison Chart of REP2004](https://github.com/ros-infrastructure/rep/blob/master/rep-2004.rst#quality-level-comparison-chart) lead us to decide that this package qualifies to Quality Level 4.
+Comparing this table with the [Quality Level Comparison Chart of REP-2004](https://github.com/ros-infrastructure/rep/blob/master/rep-2004.rst#quality-level-comparison-chart) lead us to decide that this package qualifies to Quality Level 1.
