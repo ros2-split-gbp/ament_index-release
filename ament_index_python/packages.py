@@ -13,6 +13,9 @@
 # limitations under the License.
 
 import os
+import pathlib
+import re
+import warnings
 
 from .resources import get_resource
 from .resources import get_resources
@@ -44,7 +47,13 @@ def get_package_prefix(package_name):
     :param str package_name: name of the package to locate
     :returns: installation prefix of the package
     :raises: :exc:`PackageNotFoundError` if the package is not found
+    :raises: :exc:`ValueError` if the package name is invalid
     """
+    # This regex checks for a valid package name as defined by REP-127 including the recommended
+    #  exemptions. See https://ros.org/reps/rep-0127.html#name
+    if re.fullmatch('[a-zA-Z0-9][a-zA-Z0-9_-]+', package_name, re.ASCII) is None:
+        raise ValueError(
+            "'{}' is not a valid package name".format(package_name))
     try:
         content, package_prefix = get_resource('packages', package_name)
     except LookupError:
@@ -53,7 +62,7 @@ def get_package_prefix(package_name):
     return package_prefix
 
 
-def get_package_share_directory(package_name):
+def get_package_share_directory(package_name, print_warning=True):
     """
     Return the share directory of the given package.
 
@@ -63,7 +72,33 @@ def get_package_share_directory(package_name):
     the package's share directory.
 
     :param str package_name: name of the package to locate
+    :param bool print_warning: if true, print a warning if the directory does not exist
     :returns: share directory of the package
     :raises: :exc:`PackageNotFoundError` if the package is not found
+    :raises: :exc:`ValueError` if the package name is invalid
     """
-    return os.path.join(get_package_prefix(package_name), 'share', package_name)
+    path = os.path.join(get_package_prefix(package_name), 'share', package_name)
+    if print_warning and not os.path.exists(path):
+        warnings.warn(f'Share directory for {package_name} ({path}) does not exist.', stacklevel=2)
+    return path
+
+
+def get_package_share_path(package_name, print_warning=True):
+    """
+    Return the share directory of the given package as a pathlib.Path.
+
+    For example, if you install the package 'foo' into
+    '/home/user/ros2_ws/install' and you called this function with 'foo' as the
+    argument, then it will return a path representing '/home/user/ros2_ws/install/share/foo'
+    and then you could use it to construct the path to a shared file with
+    `get_package_share_path('foo') / 'urdf/robot.urdf'`
+
+    :param str package_name: name of the package to locate
+    :param bool print_warning: if true, print a warning if the path does not exist
+    :returns: share directory of the package as a pathlib.Path
+    :raises: :exc:`PackageNotFoundError` if the package is not found
+    """
+    path = pathlib.Path(get_package_share_directory(package_name, print_warning=False))
+    if print_warning and not path.exists():
+        warnings.warn(f'Share path for {package_name} ({path}) does not exist.', stacklevel=2)
+    return path
