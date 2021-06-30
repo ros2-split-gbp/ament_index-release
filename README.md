@@ -1,3 +1,28 @@
+## ament_index (galactic) - 1.2.0-1
+
+The packages in the `ament_index` repository were released into the `galactic` distro by running `/home/audrow/.local/bin/bloom-release -t galactic -r galactic --override-release-repository-push-url git@github.com:ros2-gbp/ament_index-release.git ament_index` on `Wed, 30 Jun 2021 21:29:36 -0000`
+
+These packages were released:
+- `ament_index_cpp`
+- `ament_index_python`
+
+Version of package(s) in repository `ament_index`:
+
+- upstream repository: https://github.com/ament/ament_index.git
+- release repository: https://github.com/ros2-gbp/ament_index-release.git
+- rosdistro version: `1.0.6-1`
+- old version: `1.0.6-1`
+- new version: `1.2.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.10.7`
+- catkin_pkg version: `0.4.16`
+- rosdep version: `0.18.0`
+- rosdistro version: `0.8.0`
+- vcstools version: `0.1.42`
+
+
 ## ament_index (foxy) - 1.1.0-1
 
 The packages in the `ament_index` repository were released into the `foxy` distro by running `/home/audrow/.local/bin/bloom-release -t foxy -r foxy --override-release-repository-push-url git@github.com:ros2-gbp/ament_index-release.git ament_index` on `Wed, 30 Jun 2021 21:23:35 -0000`
