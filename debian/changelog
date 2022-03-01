@@ -1,0 +1,140 @@
+ros-rolling-ament-index-python (1.4.0-1bullseye) bullseye; urgency=high
+
+  * Print warning when get_package_share_directory() does not exist (Fix #74 <https://github.com/ament/ament_index/issues/74>) (#77 <https://github.com/ament/ament_index/issues/77>)
+  * Fail lookups on invalid resource names (#69 <https://github.com/ament/ament_index/issues/69>)
+  * Add get_package_share_path method (#73 <https://github.com/ament/ament_index/issues/73>)
+  * Contributors: David V. Lu, rob-clarke
+
+ -- Audrow Nash <audrow@openrobotics.org>  Tue, 01 Mar 2022 00:00:00 -0000
+
+ros-rolling-ament-index-python (1.0.6-1bullseye) bullseye; urgency=high
+
+
+
+ -- Audrow Nash <audrow@openrobotics.org>  Thu, 06 May 2021 00:00:00 -0000
+
+ros-rolling-ament-index-python (1.0.5-1bullseye) bullseye; urgency=high
+
+  * Remove Claire as the maintainer. (#71 <https://github.com/ament/ament_index/issues/71>)
+  * Contributors: Chris Lalancette
+
+ -- Audrow Nash <audrow@openrobotics.org>  Wed, 14 Apr 2021 00:00:00 -0000
+
+ros-rolling-ament-index-python (1.0.4-1bullseye) bullseye; urgency=high
+
+  * Change links from index.ros.org -> docs.ros.org (#70 <https://github.com/ament/ament_index/issues/70>)
+  * Contributors: Chris Lalancette
+
+ -- Audrow Nash <audrow@openrobotics.org>  Tue, 06 Apr 2021 00:00:00 -0000
+
+ros-rolling-ament-index-python (1.0.3-1bullseye) bullseye; urgency=high
+
+  * Add Audrow as a maintainer (#68 <https://github.com/ament/ament_index/issues/68>)
+  * Contributors: Audrow Nash
+
+ -- Audrow Nash <audrow@openrobotics.org>  Thu, 18 Mar 2021 00:00:00 -0000
+
+ros-rolling-ament-index-python (1.0.2-1bullseye) bullseye; urgency=high
+
+  * update maintainers (#67 <https://github.com/ament/ament_index/issues/67>)
+  * Contributors: Claire Wang
+
+ -- Audrow Nash <audrow@openrobotics.org>  Mon, 25 Jan 2021 00:00:00 -0000
+
+ros-rolling-ament-index-python (1.0.1-1bullseye) bullseye; urgency=high
+
+  * add rational why ament_index pkgs don't have explicit performance tests (#65 <https://github.com/ament/ament_index/issues/65>)
+  * Remove the Quality Level from the README.md. (#62 <https://github.com/ament/ament_index/issues/62>)
+  * Fix document link (#61 <https://github.com/ament/ament_index/issues/61>)
+  * [Quality Declaration] Update Version Stability to stable version (#58 <https://github.com/ament/ament_index/issues/58>)
+  * Contributors: Alejandro Hernández Cordero, Chris Lalancette, Dirk Thomas, Matthijs van der Burgh
+
+ -- Audrow Nash <audrow@openrobotics.org>  Wed, 07 Oct 2020 00:00:00 -0000
+
+ros-rolling-ament-index-python (1.0.0-1bullseye) bullseye; urgency=high
+
+  * Added Doxygen and Sphinx (#55 <https://github.com/ament/ament_index/issues/55>)
+  * Fixes Quality Declaration link + style (#54 <https://github.com/ament/ament_index/issues/54>)
+  * Add quality declaration ament_index_python (#50 <https://github.com/ament/ament_index/issues/50>)
+  * Contributors: Alejandro Hernández Cordero, Jorge Perez
+
+ -- Audrow Nash <audrow@openrobotics.org>  Fri, 22 May 2020 00:00:00 -0000
+
+ros-rolling-ament-index-python (0.8.0-1bullseye) bullseye; urgency=high
+
+  * more verbose test_flake8 error messages (same as ros2/launch_ros#135 <https://github.com/ros2/launch_ros/issues/135>)
+  * Add copyright checker for ament_index_python files (#44 <https://github.com/ament/ament_index/issues/44>)
+  * Code refactors to the ament_index_python test (#43 <https://github.com/ament/ament_index/issues/43>)
+  * Increase test coverage ament_index_python (#41 <https://github.com/ament/ament_index/issues/41>)
+  * Fix resource name autocompleter in ament_index CLI (#42 <https://github.com/ament/ament_index/issues/42>)
+  * Contributors: Dirk Thomas, Jorge Perez
+
+ -- Audrow Nash <audrow@openrobotics.org>  Fri, 17 Apr 2020 00:00:00 -0000
+
+ros-rolling-ament-index-python (0.7.2-1bullseye) bullseye; urgency=high
+
+  * 0.7.2
+  * fix completion of first arg (#38 <https://github.com/ament/ament_index/issues/38>)
+  * install resource marker file for package (#37 <https://github.com/ament/ament_index/issues/37>)
+  * add ament_index CLI (#35 <https://github.com/ament/ament_index/issues/35>)
+  * Contributors: Dirk Thomas
+
+ -- Audrow Nash <audrow@openrobotics.org>  Wed, 16 Oct 2019 00:00:00 -0000
+
+ros-rolling-ament-index-python (0.7.1-1bullseye) bullseye; urgency=high
+
+  * install package manifest (#34 <https://github.com/ament/ament_index/issues/34>)
+  * Contributors: Dirk Thomas
+
+ -- Audrow Nash <audrow@openrobotics.org>  Wed, 18 Sep 2019 00:00:00 -0000
+
+ros-rolling-ament-index-python (0.7.0-1bullseye) bullseye; urgency=high
+
+
+
+ -- Audrow Nash <audrow@openrobotics.org>  Thu, 11 Apr 2019 00:00:00 -0000
+
+ros-rolling-ament-index-python (0.5.1-1bullseye) bullseye; urgency=high
+
+  * level setup.py versions to 0.5.1
+  * Contributors: Mikael Arguedas
+
+ -- Audrow Nash <audrow@openrobotics.org>  Mon, 18 Jun 2018 13:50:00 -0000
+
+ros-rolling-ament-index-python (0.5.0-1bullseye) bullseye; urgency=high
+
+  * add pytest markers to linter tests
+  * set zip_safe to avoid warning during installation (#29 <https://github.com/ament/ament_index/issues/29>)
+  * Contributors: Dirk Thomas
+
+ -- Audrow Nash <audrow@openrobotics.org>  Mon, 18 Jun 2018 13:25:00 -0000
+
+ros-rolling-ament-index-python (0.4.0-1bullseye) bullseye; urgency=high
+
+  * remove test_suite, add pytest as test_requires
+  * 0.0.3
+  * update style to satisfy new flake8 plugins
+  * 0.0.2
+  * use flake8 instead of pep8 and pyflakes
+  * refactor get_package_prefix to be more efficient
+  * add function to get packages with prefixes as dict
+  * doc fixup
+  * test package related functions
+  * add package related functions
+  * refactor ament_index_python into separate files
+  * expose prefix path from get_resource, add C++ has_resource
+  * update schema url
+  * add schema to manifest files
+  * Check resource file is readable
+  * Ignore subdirectories and dotfiles in get_resources
+  * Ignore dot files in get_resources
+  * update unit tests to match #10 <https://github.com/ament/ament_index/issues/10>
+  * fix finding resources in overlayed workspaces
+  * add pep257 check
+  * add tests for ament_index_python, fix behavior
+  * add Python API to read information from the ament index
+  * Contributors: Deanna Hood, Dirk Thomas, Tully Foote, William Woodall, dhood
+
+ -- Audrow Nash <audrow@openrobotics.org>  Fri, 08 Dec 2017 00:00:00 -0000
+
+
