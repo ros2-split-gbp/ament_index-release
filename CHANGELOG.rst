@@ -2,6 +2,11 @@
 Changelog for package ament_index_cpp
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.5.2 (2023-02-14)
+------------------
+* [rolling] Update maintainers - 2022-11-07 (`#89 <https://github.com/ament/ament_index/issues/89>`_)
+* Contributors: Audrow Nash
+
 1.5.1 (2022-09-13)
 ------------------
 
